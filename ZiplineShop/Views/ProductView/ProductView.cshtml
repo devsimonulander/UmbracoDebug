@@ -1,0 +1,25 @@
+﻿@model  ZiplineShop.Controllers.VM2
+@{
+    ViewBag.Title = "ProductView";
+}
+
+<h2>ProductView</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            <h1>Categories</h1>
+        </th>
+    </tr>
+
+    @foreach (var item in Model.Categories)
+    {
+        <tr>
+            <th>
+                @Html.ActionLink(item.Name,"Category","ProductView", new { categoryId = item.Id }, null)
+                <a href="ProductView/Category/@Html.Raw(item.Id)">@Html.Raw(item.Name)</a>
+            </th>
+        </tr>
+    }
+</table>
+
